@@ -1,0 +1,187 @@
+{
+  "ewb-sg-app-b": {
+    "GroupId": "sg-010a3c67752a85558",
+    "IpPermissionsEgress": [
+      {
+        "IpProtocol": "-1",
+        "UserIdGroupPairs": [],
+        "IpRanges": [
+          {
+            "CidrIp": "0.0.0.0/0"
+          }
+        ],
+        "Ipv6Ranges": [],
+        "PrefixListIds": []
+      }
+    ],
+    "Tags": [
+      {
+        "Key": "Project",
+        "Value": "EWB-VPC-Peering"
+      },
+      {
+        "Key": "Name",
+        "Value": "ewb-sg-app-b"
+      },
+      {
+        "Key": "ManagedBy",
+        "Value": "Boto3-Automation"
+      }
+    ],
+    "VpcId": "vpc-0d9716147a7bfc61f",
+    "SecurityGroupArn": "arn:aws:ec2:ap-southeast-2:920943715638:security-group/sg-010a3c67752a85558",
+    "OwnerId": "920943715638",
+    "GroupName": "ewb-sg-app-b",
+    "Description": "App B SG allowing SSH from Bastion and ICMP Echo from App A",
+    "IpPermissions": [
+      {
+        "IpProtocol": "tcp",
+        "FromPort": 22,
+        "ToPort": 22,
+        "UserIdGroupPairs": [],
+        "IpRanges": [
+          {
+            "Description": "SSH from ewb-bastion",
+            "CidrIp": "10.10.1.10/32"
+          }
+        ],
+        "Ipv6Ranges": [],
+        "PrefixListIds": []
+      },
+      {
+        "IpProtocol": "icmp",
+        "FromPort": 8,
+        "ToPort": 0,
+        "UserIdGroupPairs": [],
+        "IpRanges": [
+          {
+            "Description": "ICMP Echo Request from ewb-app-a",
+            "CidrIp": "10.10.2.10/32"
+          }
+        ],
+        "Ipv6Ranges": [],
+        "PrefixListIds": []
+      }
+    ]
+  },
+  "ewb-sg-bastion": {
+    "GroupId": "sg-0692ebdaae91c62ef",
+    "IpPermissionsEgress": [
+      {
+        "IpProtocol": "-1",
+        "UserIdGroupPairs": [],
+        "IpRanges": [
+          {
+            "CidrIp": "0.0.0.0/0"
+          }
+        ],
+        "Ipv6Ranges": [],
+        "PrefixListIds": []
+      }
+    ],
+    "Tags": [
+      {
+        "Key": "Project",
+        "Value": "EWB-VPC-Peering"
+      },
+      {
+        "Key": "ManagedBy",
+        "Value": "Boto3-Automation"
+      },
+      {
+        "Key": "Name",
+        "Value": "ewb-sg-bastion"
+      }
+    ],
+    "VpcId": "vpc-0a4cb0748834cb862",
+    "SecurityGroupArn": "arn:aws:ec2:ap-southeast-2:920943715638:security-group/sg-0692ebdaae91c62ef",
+    "OwnerId": "920943715638",
+    "GroupName": "ewb-sg-bastion",
+    "Description": "Bastion Security Group allowing SSH from current public IP",
+    "IpPermissions": [
+      {
+        "IpProtocol": "tcp",
+        "FromPort": 22,
+        "ToPort": 22,
+        "UserIdGroupPairs": [],
+        "IpRanges": [
+          {
+            "Description": "SSH from admin workstation",
+            "CidrIp": "47.11.44.145/32"
+          },
+          {
+            "Description": "SSH from anywhere / CGNAT",
+            "CidrIp": "0.0.0.0/0"
+          }
+        ],
+        "Ipv6Ranges": [],
+        "PrefixListIds": []
+      }
+    ]
+  },
+  "ewb-sg-app-a": {
+    "GroupId": "sg-0dd66beea5cc3c12d",
+    "IpPermissionsEgress": [
+      {
+        "IpProtocol": "-1",
+        "UserIdGroupPairs": [],
+        "IpRanges": [
+          {
+            "CidrIp": "0.0.0.0/0"
+          }
+        ],
+        "Ipv6Ranges": [],
+        "PrefixListIds": []
+      }
+    ],
+    "Tags": [
+      {
+        "Key": "ManagedBy",
+        "Value": "Boto3-Automation"
+      },
+      {
+        "Key": "Project",
+        "Value": "EWB-VPC-Peering"
+      },
+      {
+        "Key": "Name",
+        "Value": "ewb-sg-app-a"
+      }
+    ],
+    "VpcId": "vpc-0a4cb0748834cb862",
+    "SecurityGroupArn": "arn:aws:ec2:ap-southeast-2:920943715638:security-group/sg-0dd66beea5cc3c12d",
+    "OwnerId": "920943715638",
+    "GroupName": "ewb-sg-app-a",
+    "Description": "App A SG allowing SSH from Bastion and ICMP Echo from App B",
+    "IpPermissions": [
+      {
+        "IpProtocol": "tcp",
+        "FromPort": 22,
+        "ToPort": 22,
+        "UserIdGroupPairs": [],
+        "IpRanges": [
+          {
+            "Description": "SSH from ewb-bastion",
+            "CidrIp": "10.10.1.10/32"
+          }
+        ],
+        "Ipv6Ranges": [],
+        "PrefixListIds": []
+      },
+      {
+        "IpProtocol": "icmp",
+        "FromPort": 8,
+        "ToPort": 0,
+        "UserIdGroupPairs": [],
+        "IpRanges": [
+          {
+            "Description": "ICMP Echo Request from ewb-app-b",
+            "CidrIp": "10.20.1.10/32"
+          }
+        ],
+        "Ipv6Ranges": [],
+        "PrefixListIds": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "ewb-rt-a-public": {
+    "Associations": [
+      {
+        "Main": false,
+        "RouteTableAssociationId": "rtbassoc-0d372046e0b2410c0",
+        "RouteTableId": "rtb-01fd1c71f44443cae",
+        "SubnetId": "subnet-0c169429bf5f026c4",
+        "AssociationState": {
+          "State": "associated"
+        }
+      }
+    ],
+    "PropagatingVgws": [],
+    "RouteTableId": "rtb-01fd1c71f44443cae",
+    "Routes": [
+      {
+        "DestinationCidrBlock": "10.10.0.0/16",
+        "GatewayId": "local",
+        "Origin": "CreateRouteTable",
+        "State": "active"
+      },
+      {
+        "DestinationCidrBlock": "10.20.0.0/16",
+        "Origin": "CreateRoute",
+        "State": "active",
+        "VpcPeeringConnectionId": "pcx-0bf20e1df91fab1f4"
+      },
+      {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-04df15110373f247f",
+        "Origin": "CreateRoute",
+        "State": "active"
+      }
+    ],
+    "Tags": [
+      {
+        "Key": "ManagedBy",
+        "Value": "Boto3-Automation"
+      },
+      {
+        "Key": "Name",
+        "Value": "ewb-rt-a-public"
+      },
+      {
+        "Key": "Project",
+        "Value": "EWB-VPC-Peering"
+      }
+    ],
+    "VpcId": "vpc-0a4cb0748834cb862",
+    "OwnerId": "920943715638"
+  },
+  "ewb-rt-b-private": {
+    "Associations": [
+      {
+        "Main": false,
+        "RouteTableAssociationId": "rtbassoc-0b2866d6f1403d332",
+        "RouteTableId": "rtb-034929ac6d721edd7",
+        "SubnetId": "subnet-09babb6754136174a",
+        "AssociationState": {
+          "State": "associated"
+        }
+      }
+    ],
+    "PropagatingVgws": [],
+    "RouteTableId": "rtb-034929ac6d721edd7",
+    "Routes": [
+      {
+        "DestinationCidrBlock": "10.10.0.0/16",
+        "Origin": "CreateRoute",
+        "State": "active",
+        "VpcPeeringConnectionId": "pcx-0bf20e1df91fab1f4"
+      },
+      {
+        "DestinationCidrBlock": "10.20.0.0/16",
+        "GatewayId": "local",
+        "Origin": "CreateRouteTable",
+        "State": "active"
+      }
+    ],
+    "Tags": [
+      {
+        "Key": "Name",
+        "Value": "ewb-rt-b-private"
+      },
+      {
+        "Key": "ManagedBy",
+        "Value": "Boto3-Automation"
+      },
+      {
+        "Key": "Project",
+        "Value": "EWB-VPC-Peering"
+      }
+    ],
+    "VpcId": "vpc-0d9716147a7bfc61f",
+    "OwnerId": "920943715638"
+  },
+  "ewb-rt-a-private": {
+    "Associations": [
+      {
+        "Main": false,
+        "RouteTableAssociationId": "rtbassoc-04df839321df0f312",
+        "RouteTableId": "rtb-042f333f4275555d2",
+        "SubnetId": "subnet-0abf6365371ea43ab",
+        "AssociationState": {
+          "State": "associated"
+        }
+      }
+    ],
+    "PropagatingVgws": [],
+    "RouteTableId": "rtb-042f333f4275555d2",
+    "Routes": [
+      {
+        "DestinationCidrBlock": "10.10.0.0/16",
+        "GatewayId": "local",
+        "Origin": "CreateRouteTable",
+        "State": "active"
+      },
+      {
+        "DestinationCidrBlock": "10.20.0.0/16",
+        "Origin": "CreateRoute",
+        "State": "active",
+        "VpcPeeringConnectionId": "pcx-0bf20e1df91fab1f4"
+      }
+    ],
+    "Tags": [
+      {
+        "Key": "Name",
+        "Value": "ewb-rt-a-private"
+      },
+      {
+        "Key": "Project",
+        "Value": "EWB-VPC-Peering"
+      },
+      {
+        "Key": "ManagedBy",
+        "Value": "Boto3-Automation"
+      }
+    ],
+    "VpcId": "vpc-0a4cb0748834cb862",
+    "OwnerId": "920943715638"
+  }
+}

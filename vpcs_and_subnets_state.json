@@ -1,0 +1,196 @@
+{
+  "vpcs": {
+    "ewb-vpc-a": {
+      "OwnerId": "920943715638",
+      "InstanceTenancy": "default",
+      "CidrBlockAssociationSet": [
+        {
+          "AssociationId": "vpc-cidr-assoc-0b9ab08bd25c04716",
+          "CidrBlock": "10.10.0.0/16",
+          "CidrBlockState": {
+            "State": "associated"
+          }
+        }
+      ],
+      "IsDefault": false,
+      "Tags": [
+        {
+          "Key": "ManagedBy",
+          "Value": "Boto3-Automation"
+        },
+        {
+          "Key": "Name",
+          "Value": "ewb-vpc-a"
+        },
+        {
+          "Key": "Project",
+          "Value": "EWB-VPC-Peering"
+        }
+      ],
+      "BlockPublicAccessStates": {
+        "InternetGatewayBlockMode": "off"
+      },
+      "VpcId": "vpc-0a4cb0748834cb862",
+      "State": "available",
+      "CidrBlock": "10.10.0.0/16",
+      "DhcpOptionsId": "dopt-093dee652c3a0420b"
+    },
+    "ewb-vpc-b": {
+      "OwnerId": "920943715638",
+      "InstanceTenancy": "default",
+      "CidrBlockAssociationSet": [
+        {
+          "AssociationId": "vpc-cidr-assoc-0a61382eac1031c2a",
+          "CidrBlock": "10.20.0.0/16",
+          "CidrBlockState": {
+            "State": "associated"
+          }
+        }
+      ],
+      "IsDefault": false,
+      "Tags": [
+        {
+          "Key": "Project",
+          "Value": "EWB-VPC-Peering"
+        },
+        {
+          "Key": "ManagedBy",
+          "Value": "Boto3-Automation"
+        },
+        {
+          "Key": "Name",
+          "Value": "ewb-vpc-b"
+        }
+      ],
+      "BlockPublicAccessStates": {
+        "InternetGatewayBlockMode": "off"
+      },
+      "VpcId": "vpc-0d9716147a7bfc61f",
+      "State": "available",
+      "CidrBlock": "10.20.0.0/16",
+      "DhcpOptionsId": "dopt-093dee652c3a0420b"
+    }
+  },
+  "subnets": {
+    "ewb-a-private": {
+      "AvailabilityZoneId": "apse2-az2",
+      "MapCustomerOwnedIpOnLaunch": false,
+      "OwnerId": "920943715638",
+      "AssignIpv6AddressOnCreation": false,
+      "Ipv6CidrBlockAssociationSet": [],
+      "Tags": [
+        {
+          "Key": "Project",
+          "Value": "EWB-VPC-Peering"
+        },
+        {
+          "Key": "Name",
+          "Value": "ewb-a-private"
+        },
+        {
+          "Key": "ManagedBy",
+          "Value": "Boto3-Automation"
+        }
+      ],
+      "SubnetArn": "arn:aws:ec2:ap-southeast-2:920943715638:subnet/subnet-0abf6365371ea43ab",
+      "EnableDns64": false,
+      "Ipv6Native": false,
+      "PrivateDnsNameOptionsOnLaunch": {
+        "HostnameType": "ip-name",
+        "EnableResourceNameDnsARecord": false,
+        "EnableResourceNameDnsAAAARecord": false
+      },
+      "BlockPublicAccessStates": {
+        "InternetGatewayBlockMode": "off"
+      },
+      "SubnetId": "subnet-0abf6365371ea43ab",
+      "State": "available",
+      "VpcId": "vpc-0a4cb0748834cb862",
+      "CidrBlock": "10.10.2.0/24",
+      "AvailableIpAddressCount": 250,
+      "AvailabilityZone": "ap-southeast-2c",
+      "DefaultForAz": false,
+      "MapPublicIpOnLaunch": false
+    },
+    "ewb-b-private": {
+      "AvailabilityZoneId": "apse2-az1",
+      "MapCustomerOwnedIpOnLaunch": false,
+      "OwnerId": "920943715638",
+      "AssignIpv6AddressOnCreation": false,
+      "Ipv6CidrBlockAssociationSet": [],
+      "Tags": [
+        {
+          "Key": "ManagedBy",
+          "Value": "Boto3-Automation"
+        },
+        {
+          "Key": "Name",
+          "Value": "ewb-b-private"
+        },
+        {
+          "Key": "Project",
+          "Value": "EWB-VPC-Peering"
+        }
+      ],
+      "SubnetArn": "arn:aws:ec2:ap-southeast-2:920943715638:subnet/subnet-09babb6754136174a",
+      "EnableDns64": false,
+      "Ipv6Native": false,
+      "PrivateDnsNameOptionsOnLaunch": {
+        "HostnameType": "ip-name",
+        "EnableResourceNameDnsARecord": false,
+        "EnableResourceNameDnsAAAARecord": false
+      },
+      "BlockPublicAccessStates": {
+        "InternetGatewayBlockMode": "off"
+      },
+      "SubnetId": "subnet-09babb6754136174a",
+      "State": "available",
+      "VpcId": "vpc-0d9716147a7bfc61f",
+      "CidrBlock": "10.20.1.0/24",
+      "AvailableIpAddressCount": 250,
+      "AvailabilityZone": "ap-southeast-2a",
+      "DefaultForAz": false,
+      "MapPublicIpOnLaunch": false
+    },
+    "ewb-a-public": {
+      "AvailabilityZoneId": "apse2-az2",
+      "MapCustomerOwnedIpOnLaunch": false,
+      "OwnerId": "920943715638",
+      "AssignIpv6AddressOnCreation": false,
+      "Ipv6CidrBlockAssociationSet": [],
+      "Tags": [
+        {
+          "Key": "Name",
+          "Value": "ewb-a-public"
+        },
+        {
+          "Key": "ManagedBy",
+          "Value": "Boto3-Automation"
+        },
+        {
+          "Key": "Project",
+          "Value": "EWB-VPC-Peering"
+        }
+      ],
+      "SubnetArn": "arn:aws:ec2:ap-southeast-2:920943715638:subnet/subnet-0c169429bf5f026c4",
+      "EnableDns64": false,
+      "Ipv6Native": false,
+      "PrivateDnsNameOptionsOnLaunch": {
+        "HostnameType": "ip-name",
+        "EnableResourceNameDnsARecord": false,
+        "EnableResourceNameDnsAAAARecord": false
+      },
+      "BlockPublicAccessStates": {
+        "InternetGatewayBlockMode": "off"
+      },
+      "SubnetId": "subnet-0c169429bf5f026c4",
+      "State": "available",
+      "VpcId": "vpc-0a4cb0748834cb862",
+      "CidrBlock": "10.10.1.0/24",
+      "AvailableIpAddressCount": 250,
+      "AvailabilityZone": "ap-southeast-2c",
+      "DefaultForAz": false,
+      "MapPublicIpOnLaunch": true
+    }
+  }
+}

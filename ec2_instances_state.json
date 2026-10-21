@@ -1,0 +1,466 @@
+{
+  "ewb-app-b": {
+    "Architecture": "x86_64",
+    "BlockDeviceMappings": [
+      {
+        "DeviceName": "/dev/xvda",
+        "Ebs": {
+          "AttachTime": "2026-10-21T04:56:07+00:00",
+          "DeleteOnTermination": true,
+          "Status": "attached",
+          "VolumeId": "vol-0bbdbf767d3a27c50",
+          "EbsCardIndex": 0
+        }
+      }
+    ],
+    "ClientToken": "41181784-a0c4-407a-bdca-222bb7dcbc7d",
+    "EbsOptimized": false,
+    "EnaSupport": true,
+    "Hypervisor": "xen",
+    "NetworkInterfaces": [
+      {
+        "Attachment": {
+          "AttachTime": "2026-10-21T04:56:06+00:00",
+          "AttachmentId": "eni-attach-0dab85207b6d3b1e0",
+          "DeleteOnTermination": true,
+          "DeviceIndex": 0,
+          "Status": "attached",
+          "NetworkCardIndex": 0
+        },
+        "Description": "",
+        "Groups": [
+          {
+            "GroupId": "sg-010a3c67752a85558",
+            "GroupName": "ewb-sg-app-b"
+          }
+        ],
+        "Ipv6Addresses": [],
+        "MacAddress": "02:ff:c2:f2:a4:fd",
+        "NetworkInterfaceId": "eni-0d1fabf43a92b947c",
+        "OwnerId": "920943715638",
+        "PrivateDnsName": "ip-10-20-1-10.ap-southeast-2.compute.internal",
+        "PrivateIpAddress": "10.20.1.10",
+        "PrivateIpAddresses": [
+          {
+            "Primary": true,
+            "PrivateDnsName": "ip-10-20-1-10.ap-southeast-2.compute.internal",
+            "PrivateIpAddress": "10.20.1.10"
+          }
+        ],
+        "SourceDestCheck": true,
+        "Status": "in-use",
+        "SubnetId": "subnet-09babb6754136174a",
+        "VpcId": "vpc-0d9716147a7bfc61f",
+        "InterfaceType": "interface",
+        "Operator": {
+          "Managed": false
+        }
+      }
+    ],
+    "RootDeviceName": "/dev/xvda",
+    "RootDeviceType": "ebs",
+    "SecurityGroups": [
+      {
+        "GroupId": "sg-010a3c67752a85558",
+        "GroupName": "ewb-sg-app-b"
+      }
+    ],
+    "SourceDestCheck": true,
+    "Tags": [
+      {
+        "Key": "Project",
+        "Value": "EWB-VPC-Peering"
+      },
+      {
+        "Key": "ManagedBy",
+        "Value": "Boto3-Automation"
+      },
+      {
+        "Key": "Name",
+        "Value": "ewb-app-b"
+      }
+    ],
+    "VirtualizationType": "hvm",
+    "CpuOptions": {
+      "CoreCount": 1,
+      "ThreadsPerCore": 2
+    },
+    "CapacityReservationSpecification": {
+      "CapacityReservationPreference": "open"
+    },
+    "HibernationOptions": {
+      "Configured": false
+    },
+    "MetadataOptions": {
+      "State": "applied",
+      "HttpTokens": "required",
+      "HttpPutResponseHopLimit": 2,
+      "HttpEndpoint": "enabled",
+      "HttpProtocolIpv6": "disabled",
+      "InstanceMetadataTags": "disabled"
+    },
+    "EnclaveOptions": {
+      "Enabled": false
+    },
+    "BootMode": "uefi-preferred",
+    "PlatformDetails": "Linux/UNIX",
+    "UsageOperation": "RunInstances",
+    "UsageOperationUpdateTime": "2026-10-21T04:56:06+00:00",
+    "PrivateDnsNameOptions": {
+      "HostnameType": "ip-name",
+      "EnableResourceNameDnsARecord": false,
+      "EnableResourceNameDnsAAAARecord": false
+    },
+    "MaintenanceOptions": {
+      "AutoRecovery": "default",
+      "RebootMigration": "default"
+    },
+    "CurrentInstanceBootMode": "uefi",
+    "NetworkPerformanceOptions": {
+      "BandwidthWeighting": "default"
+    },
+    "Operator": {
+      "Managed": false,
+      "HiddenByDefault": false
+    },
+    "InstanceId": "i-06d9c825540943530",
+    "ImageId": "ami-085ce13fd231ab4ae",
+    "State": {
+      "Code": 16,
+      "Name": "running"
+    },
+    "PrivateDnsName": "ip-10-20-1-10.ap-southeast-2.compute.internal",
+    "PublicDnsName": "",
+    "StateTransitionReason": "",
+    "KeyName": "ewb-lab",
+    "AmiLaunchIndex": 0,
+    "ProductCodes": [],
+    "InstanceType": "t3.micro",
+    "LaunchTime": "2026-10-21T04:56:06+00:00",
+    "Placement": {
+      "AvailabilityZoneId": "apse2-az1",
+      "GroupName": "",
+      "Tenancy": "default",
+      "AvailabilityZone": "ap-southeast-2a"
+    },
+    "Monitoring": {
+      "State": "disabled"
+    },
+    "SubnetId": "subnet-09babb6754136174a",
+    "VpcId": "vpc-0d9716147a7bfc61f",
+    "PrivateIpAddress": "10.20.1.10"
+  },
+  "ewb-app-a": {
+    "Architecture": "x86_64",
+    "BlockDeviceMappings": [
+      {
+        "DeviceName": "/dev/xvda",
+        "Ebs": {
+          "AttachTime": "2026-10-21T04:55:48+00:00",
+          "DeleteOnTermination": true,
+          "Status": "attached",
+          "VolumeId": "vol-083ace165bfa9d2ac",
+          "EbsCardIndex": 0
+        }
+      }
+    ],
+    "ClientToken": "c0932be9-4623-4ca0-9180-7ac2f4b102f0",
+    "EbsOptimized": false,
+    "EnaSupport": true,
+    "Hypervisor": "xen",
+    "NetworkInterfaces": [
+      {
+        "Attachment": {
+          "AttachTime": "2026-10-21T04:55:47+00:00",
+          "AttachmentId": "eni-attach-0b5b65ac19793ca5c",
+          "DeleteOnTermination": true,
+          "DeviceIndex": 0,
+          "Status": "attached",
+          "NetworkCardIndex": 0
+        },
+        "Description": "",
+        "Groups": [
+          {
+            "GroupId": "sg-0dd66beea5cc3c12d",
+            "GroupName": "ewb-sg-app-a"
+          }
+        ],
+        "Ipv6Addresses": [],
+        "MacAddress": "0a:ff:cd:06:b3:0b",
+        "NetworkInterfaceId": "eni-096b88fcf0db6655f",
+        "OwnerId": "920943715638",
+        "PrivateDnsName": "ip-10-10-2-10.ap-southeast-2.compute.internal",
+        "PrivateIpAddress": "10.10.2.10",
+        "PrivateIpAddresses": [
+          {
+            "Primary": true,
+            "PrivateDnsName": "ip-10-10-2-10.ap-southeast-2.compute.internal",
+            "PrivateIpAddress": "10.10.2.10"
+          }
+        ],
+        "SourceDestCheck": true,
+        "Status": "in-use",
+        "SubnetId": "subnet-0abf6365371ea43ab",
+        "VpcId": "vpc-0a4cb0748834cb862",
+        "InterfaceType": "interface",
+        "Operator": {
+          "Managed": false
+        }
+      }
+    ],
+    "RootDeviceName": "/dev/xvda",
+    "RootDeviceType": "ebs",
+    "SecurityGroups": [
+      {
+        "GroupId": "sg-0dd66beea5cc3c12d",
+        "GroupName": "ewb-sg-app-a"
+      }
+    ],
+    "SourceDestCheck": true,
+    "Tags": [
+      {
+        "Key": "Project",
+        "Value": "EWB-VPC-Peering"
+      },
+      {
+        "Key": "ManagedBy",
+        "Value": "Boto3-Automation"
+      },
+      {
+        "Key": "Name",
+        "Value": "ewb-app-a"
+      }
+    ],
+    "VirtualizationType": "hvm",
+    "CpuOptions": {
+      "CoreCount": 1,
+      "ThreadsPerCore": 2
+    },
+    "CapacityReservationSpecification": {
+      "CapacityReservationPreference": "open"
+    },
+    "HibernationOptions": {
+      "Configured": false
+    },
+    "MetadataOptions": {
+      "State": "applied",
+      "HttpTokens": "required",
+      "HttpPutResponseHopLimit": 2,
+      "HttpEndpoint": "enabled",
+      "HttpProtocolIpv6": "disabled",
+      "InstanceMetadataTags": "disabled"
+    },
+    "EnclaveOptions": {
+      "Enabled": false
+    },
+    "BootMode": "uefi-preferred",
+    "PlatformDetails": "Linux/UNIX",
+    "UsageOperation": "RunInstances",
+    "UsageOperationUpdateTime": "2026-10-21T04:55:47+00:00",
+    "PrivateDnsNameOptions": {
+      "HostnameType": "ip-name",
+      "EnableResourceNameDnsARecord": false,
+      "EnableResourceNameDnsAAAARecord": false
+    },
+    "MaintenanceOptions": {
+      "AutoRecovery": "default",
+      "RebootMigration": "default"
+    },
+    "CurrentInstanceBootMode": "uefi",
+    "NetworkPerformanceOptions": {
+      "BandwidthWeighting": "default"
+    },
+    "Operator": {
+      "Managed": false,
+      "HiddenByDefault": false
+    },
+    "InstanceId": "i-0e9845278c43d5f7f",
+    "ImageId": "ami-085ce13fd231ab4ae",
+    "State": {
+      "Code": 16,
+      "Name": "running"
+    },
+    "PrivateDnsName": "ip-10-10-2-10.ap-southeast-2.compute.internal",
+    "PublicDnsName": "",
+    "StateTransitionReason": "",
+    "KeyName": "ewb-lab",
+    "AmiLaunchIndex": 0,
+    "ProductCodes": [],
+    "InstanceType": "t3.micro",
+    "LaunchTime": "2026-10-21T04:55:47+00:00",
+    "Placement": {
+      "AvailabilityZoneId": "apse2-az2",
+      "GroupName": "",
+      "Tenancy": "default",
+      "AvailabilityZone": "ap-southeast-2c"
+    },
+    "Monitoring": {
+      "State": "disabled"
+    },
+    "SubnetId": "subnet-0abf6365371ea43ab",
+    "VpcId": "vpc-0a4cb0748834cb862",
+    "PrivateIpAddress": "10.10.2.10"
+  },
+  "ewb-bastion": {
+    "Architecture": "x86_64",
+    "BlockDeviceMappings": [
+      {
+        "DeviceName": "/dev/xvda",
+        "Ebs": {
+          "AttachTime": "2026-10-21T04:55:30+00:00",
+          "DeleteOnTermination": true,
+          "Status": "attached",
+          "VolumeId": "vol-0abad2f658198ab59",
+          "EbsCardIndex": 0
+        }
+      }
+    ],
+    "ClientToken": "e9ad9448-bf59-45bf-a445-63a1b8bd95e9",
+    "EbsOptimized": false,
+    "EnaSupport": true,
+    "Hypervisor": "xen",
+    "NetworkInterfaces": [
+      {
+        "Association": {
+          "IpOwnerId": "amazon",
+          "PublicDnsName": "ec2-13-236-1-227.ap-southeast-2.compute.amazonaws.com",
+          "PublicIp": "13.236.1.227"
+        },
+        "Attachment": {
+          "AttachTime": "2026-10-21T04:55:29+00:00",
+          "AttachmentId": "eni-attach-051617fa4e368eed2",
+          "DeleteOnTermination": true,
+          "DeviceIndex": 0,
+          "Status": "attached",
+          "NetworkCardIndex": 0
+        },
+        "Description": "",
+        "Groups": [
+          {
+            "GroupId": "sg-0692ebdaae91c62ef",
+            "GroupName": "ewb-sg-bastion"
+          }
+        ],
+        "Ipv6Addresses": [],
+        "MacAddress": "0a:ff:e9:5a:ac:21",
+        "NetworkInterfaceId": "eni-0d6841123862e6e5d",
+        "OwnerId": "920943715638",
+        "PrivateDnsName": "ip-10-10-1-10.ap-southeast-2.compute.internal",
+        "PrivateIpAddress": "10.10.1.10",
+        "PrivateIpAddresses": [
+          {
+            "Association": {
+              "IpOwnerId": "amazon",
+              "PublicDnsName": "ec2-13-236-1-227.ap-southeast-2.compute.amazonaws.com",
+              "PublicIp": "13.236.1.227"
+            },
+            "Primary": true,
+            "PrivateDnsName": "ip-10-10-1-10.ap-southeast-2.compute.internal",
+            "PrivateIpAddress": "10.10.1.10"
+          }
+        ],
+        "SourceDestCheck": true,
+        "Status": "in-use",
+        "SubnetId": "subnet-0c169429bf5f026c4",
+        "VpcId": "vpc-0a4cb0748834cb862",
+        "InterfaceType": "interface",
+        "Operator": {
+          "Managed": false
+        }
+      }
+    ],
+    "RootDeviceName": "/dev/xvda",
+    "RootDeviceType": "ebs",
+    "SecurityGroups": [
+      {
+        "GroupId": "sg-0692ebdaae91c62ef",
+        "GroupName": "ewb-sg-bastion"
+      }
+    ],
+    "SourceDestCheck": true,
+    "Tags": [
+      {
+        "Key": "ManagedBy",
+        "Value": "Boto3-Automation"
+      },
+      {
+        "Key": "Project",
+        "Value": "EWB-VPC-Peering"
+      },
+      {
+        "Key": "Name",
+        "Value": "ewb-bastion"
+      }
+    ],
+    "VirtualizationType": "hvm",
+    "CpuOptions": {
+      "CoreCount": 1,
+      "ThreadsPerCore": 2
+    },
+    "CapacityReservationSpecification": {
+      "CapacityReservationPreference": "open"
+    },
+    "HibernationOptions": {
+      "Configured": false
+    },
+    "MetadataOptions": {
+      "State": "applied",
+      "HttpTokens": "required",
+      "HttpPutResponseHopLimit": 2,
+      "HttpEndpoint": "enabled",
+      "HttpProtocolIpv6": "disabled",
+      "InstanceMetadataTags": "disabled"
+    },
+    "EnclaveOptions": {
+      "Enabled": false
+    },
+    "BootMode": "uefi-preferred",
+    "PlatformDetails": "Linux/UNIX",
+    "UsageOperation": "RunInstances",
+    "UsageOperationUpdateTime": "2026-10-21T04:55:29+00:00",
+    "PrivateDnsNameOptions": {
+      "HostnameType": "ip-name",
+      "EnableResourceNameDnsARecord": false,
+      "EnableResourceNameDnsAAAARecord": false
+    },
+    "MaintenanceOptions": {
+      "AutoRecovery": "default",
+      "RebootMigration": "default"
+    },
+    "CurrentInstanceBootMode": "uefi",
+    "NetworkPerformanceOptions": {
+      "BandwidthWeighting": "default"
+    },
+    "Operator": {
+      "Managed": false,
+      "HiddenByDefault": false
+    },
+    "InstanceId": "i-0914610f77ccec77e",
+    "ImageId": "ami-085ce13fd231ab4ae",
+    "State": {
+      "Code": 16,
+      "Name": "running"
+    },
+    "PrivateDnsName": "ip-10-10-1-10.ap-southeast-2.compute.internal",
+    "PublicDnsName": "ec2-13-236-1-227.ap-southeast-2.compute.amazonaws.com",
+    "StateTransitionReason": "",
+    "KeyName": "ewb-lab",
+    "AmiLaunchIndex": 0,
+    "ProductCodes": [],
+    "InstanceType": "t3.micro",
+    "LaunchTime": "2026-10-21T04:55:29+00:00",
+    "Placement": {
+      "AvailabilityZoneId": "apse2-az2",
+      "GroupName": "",
+      "Tenancy": "default",
+      "AvailabilityZone": "ap-southeast-2c"
+    },
+    "Monitoring": {
+      "State": "disabled"
+    },
+    "SubnetId": "subnet-0c169429bf5f026c4",
+    "VpcId": "vpc-0a4cb0748834cb862",
+    "PrivateIpAddress": "10.10.1.10",
+    "PublicIpAddress": "13.236.1.227"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "AccepterVpcInfo": {
+    "CidrBlock": "10.20.0.0/16",
+    "CidrBlockSet": [
+      {
+        "CidrBlock": "10.20.0.0/16"
+      }
+    ],
+    "OwnerId": "920943715638",
+    "PeeringOptions": {
+      "AllowDnsResolutionFromRemoteVpc": false,
+      "AllowEgressFromLocalClassicLinkToRemoteVpc": false,
+      "AllowEgressFromLocalVpcToRemoteClassicLink": false
+    },
+    "VpcId": "vpc-0d9716147a7bfc61f",
+    "Region": "ap-southeast-2"
+  },
+  "RequesterVpcInfo": {
+    "CidrBlock": "10.10.0.0/16",
+    "CidrBlockSet": [
+      {
+        "CidrBlock": "10.10.0.0/16"
+      }
+    ],
+    "OwnerId": "920943715638",
+    "PeeringOptions": {
+      "AllowDnsResolutionFromRemoteVpc": false,
+      "AllowEgressFromLocalClassicLinkToRemoteVpc": false,
+      "AllowEgressFromLocalVpcToRemoteClassicLink": false
+    },
+    "VpcId": "vpc-0a4cb0748834cb862",
+    "Region": "ap-southeast-2"
+  },
+  "Status": {
+    "Code": "active",
+    "Message": "Active"
+  },
+  "Tags": [
+    {
+      "Key": "Name",
+      "Value": "ewb-a-b-peer"
+    },
+    {
+      "Key": "Project",
+      "Value": "EWB-VPC-Peering"
+    },
+    {
+      "Key": "ManagedBy",
+      "Value": "Boto3-Automation"
+    }
+  ],
+  "VpcPeeringConnectionId": "pcx-0bf20e1df91fab1f4"
+}
