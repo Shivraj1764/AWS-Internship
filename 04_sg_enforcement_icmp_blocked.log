@@ -1,0 +1,10 @@
+=== TEST 3A: SECURITY GROUP ENFORCEMENT - ICMP BLOCKED ===
+Timestamp: 2026-10-21T05:14:45.361676+00:00
+Security Group: ewb-sg-app-b (sg-010a3c67752a85558)
+Action: Revoked ICMP Echo rule from 10.10.2.10/32
+Exit Code: 1
+
+PING 10.20.1.10 (10.20.1.10) 56(84) bytes of data.
+
+--- 10.20.1.10 ping statistics ---
+3 packets transmitted, 0 received, 100% packet loss, time 2074ms

@@ -1,0 +1,16 @@
+=== TEST 2A: PING APP-A TO APP-B (PEERING ACTIVE) ===
+Timestamp: 2026-10-21T05:14:17.036868+00:00
+Source: ewb-app-a (10.10.2.10 in VPC A)
+Target: ewb-app-b (10.20.1.10 in VPC B)
+Peering ID: pcx-0bf20e1df91fab1f4
+Exit Code: 0
+
+PING 10.20.1.10 (10.20.1.10) 56(84) bytes of data.
+64 bytes from 10.20.1.10: icmp_seq=1 ttl=127 time=0.791 ms
+64 bytes from 10.20.1.10: icmp_seq=2 ttl=127 time=0.799 ms
+64 bytes from 10.20.1.10: icmp_seq=3 ttl=127 time=0.784 ms
+64 bytes from 10.20.1.10: icmp_seq=4 ttl=127 time=0.795 ms
+
+--- 10.20.1.10 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3091ms
+rtt min/avg/max/mdev = 0.784/0.792/0.799/0.005 ms

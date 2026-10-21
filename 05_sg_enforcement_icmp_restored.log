@@ -1,0 +1,15 @@
+=== TEST 3B: SECURITY GROUP ENFORCEMENT - ICMP RESTORED ===
+Timestamp: 2026-10-21T05:15:02.164633+00:00
+Security Group: ewb-sg-app-b (sg-010a3c67752a85558)
+Action: Re-authorized ICMP Echo rule from 10.10.2.10/32
+Exit Code: 0
+
+PING 10.20.1.10 (10.20.1.10) 56(84) bytes of data.
+64 bytes from 10.20.1.10: icmp_seq=1 ttl=127 time=0.794 ms
+64 bytes from 10.20.1.10: icmp_seq=2 ttl=127 time=0.776 ms
+64 bytes from 10.20.1.10: icmp_seq=3 ttl=127 time=0.785 ms
+64 bytes from 10.20.1.10: icmp_seq=4 ttl=127 time=0.782 ms
+
+--- 10.20.1.10 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3093ms
+rtt min/avg/max/mdev = 0.776/0.784/0.794/0.006 ms

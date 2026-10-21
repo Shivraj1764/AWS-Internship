@@ -1,0 +1,11 @@
+=== TEST 1: BASELINE PING BEFORE ROUTE INJECTION ===
+Timestamp: 2026-10-21T05:14:01.685577+00:00
+Source: ewb-app-a (10.10.2.10 in VPC A)
+Target: ewb-app-b (10.20.1.10 in VPC B)
+Route State: 10.20.0.0/16 -> PCX REMOVED from ewb-rt-a-private
+Exit Code: 1
+
+PING 10.20.1.10 (10.20.1.10) 56(84) bytes of data.
+
+--- 10.20.1.10 ping statistics ---
+4 packets transmitted, 0 received, 100% packet loss, time 3133ms
