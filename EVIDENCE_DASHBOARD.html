@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EWB VPC Peering - Proof-of-Work Evidence Dashboard</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .header { background: linear-gradient(135deg, #1e293b, #0f172a); border: 1px solid #334155; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3); }
+    .badge { display: inline-block; background: #10b981; color: #022c22; font-weight: bold; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; }
+    .card { background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 1.5rem; margin-bottom: 1.5rem; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #334155; }
+    th { background: #0f172a; color: #94a3b8; font-size: 0.85rem; text-transform: uppercase; }
+    .pass { color: #10b981; font-weight: bold; }
+    pre { background: #020617; border: 1px solid #1e293b; padding: 1rem; border-radius: 8px; color: #38bdf8; overflow-x: auto; font-size: 0.875rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+    .stat-card { background: #1e293b; border: 1px solid #334155; padding: 1.25rem; border-radius: 8px; }
+    .stat-title { color: #94a3b8; font-size: 0.8rem; text-transform: uppercase; }
+    .stat-val { font-size: 1.25rem; font-weight: bold; color: #38bdf8; margin-top: 0.25rem; word-break: break-all; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <span class="badge">100% PASS</span>
+      <h1 style="margin: 0.75rem 0 0.25rem 0;">EWB VPC Peering Proof-of-Work Evidence</h1>
+      <p style="color: #94a3b8; margin: 0;">Region: <code>ap-southeast-2</code> | Generated: 2026-10-21 05:15:02 UTC | Automation: Boto3 Python Suite</p>
+    </div>
+
+    <div class="grid">
+      <div class="stat-card"><div class="stat-title">VPC Peering Connection</div><div class="stat-val">pcx-0bf20e1df91fab1f4</div></div>
+      <div class="stat-card"><div class="stat-title">Bastion Public IP</div><div class="stat-val">13.236.1.227</div></div>
+      <div class="stat-card"><div class="stat-title">App-A Private IP</div><div class="stat-val">10.10.2.10</div></div>
+      <div class="stat-card"><div class="stat-title">App-B Private IP</div><div class="stat-val">10.20.1.10</div></div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top: 0;">Test Execution Summary Matrix</h2>
+      <table>
+        <thead>
+          <tr><th>Test ID</th><th>Scenario</th><th>Expected Outcome</th><th>Actual Result</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>TEST-1</b></td><td>Baseline Connectivity (No Route)</td><td>100% packet loss / Destination Unreachable</td><td>100% packet loss (Confirmed Unreachable)</td><td class='pass'>PASS</td></tr><tr><td><b>TEST-2A</b></td><td>Cross-VPC Ping (App-A -> App-B)</td><td>0% packet loss across VPC peering</td><td>0% packet loss (verified 4/4 packets)</td><td class='pass'>PASS</td></tr><tr><td><b>TEST-2B</b></td><td>Cross-VPC Ping (App-B -> App-A)</td><td>0% packet loss across VPC peering</td><td>0% packet loss (verified 4/4 packets)</td><td class='pass'>PASS</td></tr><tr><td><b>TEST-3A</b></td><td>Security Group Drop (ICMP Revoked)</td><td>100% packet loss enforced by SG</td><td>100% packet loss confirmed</td><td class='pass'>PASS</td></tr><tr><td><b>TEST-3B</b></td><td>Security Group Restore (ICMP Re-added)</td><td>0% packet loss restored</td><td>0% packet loss confirmed (verified 4/4)</td><td class='pass'>PASS</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Live Test Terminal Output Logs</h2>
+      <h3>Test 1: Baseline Ping (Without Route)</h3>
+      <pre>=== TEST 1: BASELINE PING BEFORE ROUTE INJECTION ===
+Timestamp: 2026-10-21T05:14:01.685577+00:00
+Source: ewb-app-a (10.10.2.10 in VPC A)
+Target: ewb-app-b (10.20.1.10 in VPC B)
+Route State: 10.20.0.0/16 -> PCX REMOVED from ewb-rt-a-private
+Exit Code: 1
+
+PING 10.20.1.10 (10.20.1.10) 56(84) bytes of data.
+
+--- 10.20.1.10 ping statistics ---
+4 packets transmitted, 0 received, 100% packet loss, time 3133ms
+</pre>
+
+      <h3>Test 2A: Cross-VPC Ping (App-A &rarr; App-B) - 0% Loss</h3>
+      <pre>=== TEST 2A: PING APP-A TO APP-B (PEERING ACTIVE) ===
+Timestamp: 2026-10-21T05:14:17.036868+00:00
+Source: ewb-app-a (10.10.2.10 in VPC A)
+Target: ewb-app-b (10.20.1.10 in VPC B)
+Peering ID: pcx-0bf20e1df91fab1f4
+Exit Code: 0
+
+PING 10.20.1.10 (10.20.1.10) 56(84) bytes of data.
+64 bytes from 10.20.1.10: icmp_seq=1 ttl=127 time=0.791 ms
+64 bytes from 10.20.1.10: icmp_seq=2 ttl=127 time=0.799 ms
+64 bytes from 10.20.1.10: icmp_seq=3 ttl=127 time=0.784 ms
+64 bytes from 10.20.1.10: icmp_seq=4 ttl=127 time=0.795 ms
+
+--- 10.20.1.10 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3091ms
+rtt min/avg/max/mdev = 0.784/0.792/0.799/0.005 ms
+</pre>
+
+      <h3>Test 2B: Cross-VPC Ping (App-B &rarr; App-A) - 0% Loss</h3>
+      <pre>=== TEST 2B: PING APP-B TO APP-A (PEERING ACTIVE) ===
+Timestamp: 2026-10-21T05:14:29.080456+00:00
+Source: ewb-app-b (10.20.1.10 in VPC B)
+Target: ewb-app-a (10.10.2.10 in VPC A)
+Peering ID: pcx-0bf20e1df91fab1f4
+Exit Code: 0
+
+PING 10.10.2.10 (10.10.2.10) 56(84) bytes of data.
+64 bytes from 10.10.2.10: icmp_seq=1 ttl=127 time=0.790 ms
+64 bytes from 10.10.2.10: icmp_seq=2 ttl=127 time=0.786 ms
+64 bytes from 10.10.2.10: icmp_seq=3 ttl=127 time=0.806 ms
+64 bytes from 10.10.2.10: icmp_seq=4 ttl=127 time=0.809 ms
+
+--- 10.10.2.10 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3104ms
+rtt min/avg/max/mdev = 0.786/0.797/0.809/0.009 ms
+</pre>
+
+      <h3>Test 3A: Security Group Dropping ICMP (100% Loss)</h3>
+      <pre>=== TEST 3A: SECURITY GROUP ENFORCEMENT - ICMP BLOCKED ===
+Timestamp: 2026-10-21T05:14:45.361676+00:00
+Security Group: ewb-sg-app-b (sg-010a3c67752a85558)
+Action: Revoked ICMP Echo rule from 10.10.2.10/32
+Exit Code: 1
+
+PING 10.20.1.10 (10.20.1.10) 56(84) bytes of data.
+
+--- 10.20.1.10 ping statistics ---
+3 packets transmitted, 0 received, 100% packet loss, time 2074ms
+</pre>
+
+      <h3>Test 3B: Security Group Restoring ICMP (0% Loss)</h3>
+      <pre>=== TEST 3B: SECURITY GROUP ENFORCEMENT - ICMP RESTORED ===
+Timestamp: 2026-10-21T05:15:02.164633+00:00
+Security Group: ewb-sg-app-b (sg-010a3c67752a85558)
+Action: Re-authorized ICMP Echo rule from 10.10.2.10/32
+Exit Code: 0
+
+PING 10.20.1.10 (10.20.1.10) 56(84) bytes of data.
+64 bytes from 10.20.1.10: icmp_seq=1 ttl=127 time=0.794 ms
+64 bytes from 10.20.1.10: icmp_seq=2 ttl=127 time=0.776 ms
+64 bytes from 10.20.1.10: icmp_seq=3 ttl=127 time=0.785 ms
+64 bytes from 10.20.1.10: icmp_seq=4 ttl=127 time=0.782 ms
+
+--- 10.20.1.10 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3093ms
+rtt min/avg/max/mdev = 0.776/0.784/0.794/0.006 ms
+</pre>
+    </div>
+  </div>
+</body>
+</html>
